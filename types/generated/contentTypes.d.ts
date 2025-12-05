@@ -579,10 +579,12 @@ export interface ApiCareerCareer extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    careerStatus: Schema.Attribute.Boolean;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    detailInfo: Schema.Attribute.RichText;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -594,8 +596,9 @@ export interface ApiCareerCareer extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    workingTime: Schema.Attribute.Enumeration<['fulltime', 'parttime']> &
-      Schema.Attribute.DefaultTo<'parttime'>;
+    workingTime: Schema.Attribute.Enumeration<
+      ['full-time', 'part-time', 'contract', 'intern']
+    >;
   };
 }
 

@@ -20,11 +20,18 @@
     },
     "workingTime": {
       "type": "enumeration",
-      "default": "parttime",
       "enum": [
-        "fulltime",
-        "parttime"
+        "full-time",
+        "part-time",
+        "contract",
+        "intern"
       ]
+    },
+    "detailInfo": {
+      "type": "richtext"
+    },
+    "careerStatus": {
+      "type": "boolean"
     }
   }
 }
